@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.23" />
+
+        <LinearLayout
+            android:id="@+id/ll_tutorial1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_tutorial_1"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            app:layout_constraintBottom_toBottomOf="@id/guideLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/flags"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_flag_unselect" />
+
+
+            <TextView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/C0C3E4"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:text="@string/star"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:drawableTopCompat="@drawable/ic_star" />
+
+
+            <TextView
+                android:id="@+id/calender"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/cl_5F33E1"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:text="@string/day"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:drawableTopCompat="@drawable/ic_day" />
+
+            <TextView
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_secondary_swpie_item_right"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="@dimen/_13sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:text="@string/delete"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:drawableTopCompat="@drawable/ic_delete" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/itemTask"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_tutorial_1"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/guideLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.padi.todo_list.common.base.CircularCheckBox
+                android:id="@+id/cbTask"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/fab_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txtNameTask"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:gravity="start"
+                android:maxLines="1"
+                android:textColor="@color/black_1"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbTask"
+                app:layout_constraintEnd_toStartOf="@+id/flags1"
+                app:layout_constraintStart_toEndOf="@+id/cbTask"
+                app:layout_constraintTop_toTopOf="@+id/cbTask" />
+
+            <ImageView
+                android:id="@+id/flags1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_flag_unselect"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/img_tutorial1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:src="@drawable/img_polygon_2"
+            app:layout_constraintEnd_toEndOf="@+id/txt_tutorial_1"
+            app:layout_constraintTop_toBottomOf="@+id/ll_tutorial1" />
+
+        <ImageView
+            android:id="@+id/img_touch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/img_touch_1"
+            app:layout_constraintEnd_toEndOf="@+id/txt_tutorial_1"
+            app:layout_constraintTop_toBottomOf="@+id/txt_tutorial_1" />
+
+        <TextView
+            android:id="@+id/txt_tutorial_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-9dp"
+            android:layout_marginEnd="@dimen/_17sdp"
+            android:background="@drawable/bg_text_tutorial"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:gravity="center|end"
+            android:maxWidth="@dimen/_200sdp"
+            android:maxLines="2"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/txt_tutorial_1"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/ll_tutorial1"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@+id/ll_tutorial1"
+            app:layout_constraintTop_toBottomOf="@+id/img_tutorial1" />
+
+        <ImageView
+            android:id="@+id/img_tutorial2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/img_polygon_1"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/ll_tutorial1"
+            app:layout_constraintTop_toBottomOf="@+id/ll_tutorial1" />
+
+        <TextView
+            android:id="@+id/txt_tutorial_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="-9dp"
+            android:background="@drawable/bg_text_tutorial"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/txt_tutorial_2"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_tutorial2" />
+
+        <ImageView
+            android:id="@+id/img_touch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/img_touch_2"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/txt_tutorial_2"
+            app:layout_constraintTop_toBottomOf="@+id/txt_tutorial_2" />
+
+        <ImageView
+            android:id="@+id/img_tutorial3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/img_polygon_3"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/ll_tutorial1"
+            app:layout_constraintStart_toStartOf="@+id/ll_tutorial1"
+            app:layout_constraintTop_toBottomOf="@+id/ll_tutorial1" />
+
+        <TextView
+            android:id="@+id/txt_tutorial_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="-9dp"
+            android:background="@drawable/bg_text_tutorial"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:padding="@dimen/_6sdp"
+            android:text="@string/txt_tutorial_3"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_tutorial2" />
+
+        <ImageView
+            android:id="@+id/img_touch3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/img_touch3"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/txt_tutorial_3"
+            app:layout_constraintStart_toStartOf="@+id/txt_tutorial_3"
+            app:layout_constraintTop_toBottomOf="@+id/txt_tutorial_3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/bg_next_tutoria"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/ll_tutorial1"
+            app:layout_constraintTop_toBottomOf="@id/img_touch1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

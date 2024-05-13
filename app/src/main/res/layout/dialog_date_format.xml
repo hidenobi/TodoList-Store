@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/round_white_12sp"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date_format"
+                android:textColor="@color/black_1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <RadioGroup
+                android:id="@+id/groupRdDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+                <RadioButton
+                    android:id="@+id/rb_ymd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/due_date"
+                    android:textColor="@color/black_2"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+                <RadioButton
+                    android:id="@+id/rb_dmy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alpha_bet_AZ"
+                    android:textColor="@color/black_2"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/rb_ymd"
+                    app:layout_constraintTop_toBottomOf="@+id/rb_ymd" />
+
+                <RadioButton
+                    android:id="@+id/rb_mdy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alpha_bet_ZA"
+                    android:textColor="@color/black_2"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/rb_dmy"
+                    app:layout_constraintTop_toBottomOf="@+id/rb_dmy" />
+            </RadioGroup>
+
+
+
+            <TextView
+                android:id="@+id/btnDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@android:color/transparent"
+                android:text="@string/save"
+                android:padding="@dimen/_6sdp"
+                android:textColor="@color/primary_purpul"
+                android:textSize="16sp"
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/groupRdDate" />
+            <TextView
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/cancel"
+                android:textColor="@color/primary_purpul_50"
+                android:textSize="16sp"
+                android:padding="@dimen/_6sdp"
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toStartOf="@+id/btnDone"
+                app:layout_constraintTop_toTopOf="@+id/btnDone" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

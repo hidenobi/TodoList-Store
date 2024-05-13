@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="date"
+            type="com.padi.todo_list.ui.task.model.TitleDateUI" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/icRadio"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:adjustViewBounds="true"
+            android:elevation="2dp"
+            android:scaleType="fitCenter"
+            android:src="@{(date.isTop) ? @drawable/ic_radio_border : @drawable/ic_radio}"
+            app:layout_constraintBottom_toBottomOf="@id/tvDate"
+            app:layout_constraintEnd_toStartOf="@id/tvDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvDate"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_radio" />
+
+        <View
+            android:id="@+id/viewLineAll"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/primary_purpul"
+            app:checked="@{!date.isTop}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/icRadio"
+            app:layout_constraintStart_toStartOf="@id/icRadio"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/viewLinePart"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/primary_purpul"
+            app:checked="@{date.isTop}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/icRadio"
+            app:layout_constraintStart_toStartOf="@id/icRadio"
+            app:layout_constraintTop_toTopOf="@id/guideLine" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:gravity="start"
+            android:textColor="@color/primary_purpul"
+            android:textSize="13sp"
+            android:text="@{date.date.toString()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icRadio"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="99/99/9999" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

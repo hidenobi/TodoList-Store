@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="onStartSrc"
+            type="Boolean" />
+
+        <variable
+            name="event"
+            type="com.padi.todo_list.ui.task.model.EventTaskUI" />
+    </data>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/itemTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_main_swpie_item"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp">
+
+            <com.padi.todo_list.common.base.CircularCheckBox
+                android:id="@+id/cbTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fab_margin"
+                android:checked="@{event.completed}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txtNameTask"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:text="@{event.name}"
+                android:textColor="@color/black_1"
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:gravity="start"
+                app:layout_constraintEnd_toStartOf="@+id/star"
+                app:layout_constraintBottom_toBottomOf="@+id/cbTask"
+                app:layout_constraintStart_toEndOf="@+id/cbTask"
+                app:layout_constraintTop_toTopOf="@+id/cbTask" />
+
+            <TextView
+                android:id="@+id/txtDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:textColor="@color/red_E83434"
+                android:textSize="11sp"
+                app:taskDateTimeFormatText="@{event}"
+                app:layout_constraintStart_toStartOf="@+id/txtNameTask"
+                app:layout_constraintTop_toBottomOf="@+id/txtNameTask"
+                tools:text="@string/today" />
+
+            <ImageView
+                android:id="@+id/icNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtDay"
+                app:layout_constraintStart_toEndOf="@+id/txtDay"
+                app:layout_constraintTop_toTopOf="@+id/txtDay"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="11sp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_star_select"
+                app:setStarTask="@{event.star}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

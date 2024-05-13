@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="grey">#C2C2C2</color>
+    <color name="grey2">#707070</color>
+    <color name="grey2_30">#4D707070</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary_purpul">#5F33E1</color>
+    <color name="false_color">#C7C7CC</color>
+    <color name="primary_purpul_50">#805F33E1</color>
+    <color name="blue_text">#5D5FEF</color>
+    <color name="line">#EBEBF0</color>
+
+    <color name="dialog_background">#1A000000</color>
+    <color name="blue">#007AFF</color>
+    <color name="btn_done">#5F33E1</color>
+    <color name="btn_cancel">#805F33E1</color>
+    <color name="color_E4ECFC">#E4ECFC</color>
+    <color name="C0C3E4">#C0C3E4</color>
+    <color name="grey_1">#707070</color>
+    <color name="grey_3">#33C7C9D9</color>
+    <color name="grey_2">#C7C9D9</color>
+    <color name="black_1">#2C2C2C</color>
+    <color name="red_E83434">#E83434</color>
+    <color name="cl_5F33E1">#5F33E1</color>
+    <color name="main_screen">#F3FCFF</color>
+    <color name="black_2">#353535</color>
+    <color name="line_detail">#EBEBF0</color>
+    <color name="black_text_calendar">#535353</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="color_252525">#252525</color>
+    <color name="color_line_chart">#FF5F33E1</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="transparent2">#00000000</color>
+    <color name="text_y_line_chart">#243B6B</color>
+    <color name="axis_x_line">#4D233A6A</color>
+
+    <color name="color_pie_1">#5F33E1</color>
+    <color name="color_pie_2">#CC5F33E1</color>
+    <color name="color_pie_3">#995F33E1</color>
+    <color name="color_pie_4">#665F33E1</color>
+    <color name="color_pie_5">#4D5F33E1</color>
+    <color name="color_pie_6">#335F33E1</color>
+    <color name="color_pie_7">#1A5F33E1</color>
+
+    <color name="stroke">#C5C5C5</color>
+</resources>

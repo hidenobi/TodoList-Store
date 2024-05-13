@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="onCompleteSrc"
+            type="Boolean" />
+        <variable
+            name="event"
+            type="com.padi.todo_list.ui.task.model.EventTaskUI" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="@{event.isSelected?View.GONE:View.VISIBLE}">
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            app:checked="@{(onCompleteSrc==null) ? false : onCompleteSrc}"
+            android:layout_marginHorizontal="9dp"
+            android:background="@color/primary_purpul"
+            app:layout_constraintEnd_toStartOf="@id/swipe_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/swipe_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.padi.todo_list.ui.task.lib.SwipeRevealLayout
+            android:id="@+id/swipe_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:dragEdge="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/viewLine"
+            app:mode="same_level">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <TextView
+                    android:id="@+id/star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/C0C3E4"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:gravity="center_horizontal"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:text="@string/star"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    app:setImageStar="@{event.star}" />
+
+
+                <TextView
+                    android:id="@+id/calender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/cl_5F33E1"
+                    android:gravity="center_horizontal"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:text="@string/day"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    app:drawableTopCompat="@drawable/ic_day" />
+
+                <TextView
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_secondary_swpie_item_right"
+                    android:gravity="center_horizontal"
+                    android:paddingHorizontal="@dimen/_13sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:text="@string/delete"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    app:drawableTopCompat="@drawable/ic_delete" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/itemTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_main_swpie_item"
+                android:padding="@dimen/_5sdp">
+
+                <com.padi.todo_list.common.base.CircularCheckBox
+                    android:id="@+id/cbTask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/fab_margin"
+                    android:checked="@{event.completed}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/txtNameTask"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:text="@{event.name}"
+                    android:textColor="@color/black_1"
+                    android:textSize="15sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    app:layout_constraintEnd_toStartOf="@+id/flags"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbTask"
+                    app:layout_constraintStart_toEndOf="@+id/cbTask"
+                    app:layout_constraintTop_toTopOf="@+id/cbTask" />
+
+                <TextView
+                    android:id="@+id/txtDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:textSize="11sp"
+                    android:textColor="@color/grey_1"
+                    app:taskDateTimeFormatText="@{event}"
+                    app:layout_constraintStart_toStartOf="@+id/txtNameTask"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNameTask"
+                    tools:text="@string/today" />
+
+                <ImageView
+                    android:id="@+id/icNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:src="@drawable/ic_notification_task"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtDay"
+                    app:layout_constraintStart_toEndOf="@+id/txtDay"
+                    app:layout_constraintTop_toTopOf="@+id/txtDay"
+                    app:setImageState="@{event.hasReminder}"
+                    tools:ignore="ContentDescription" />
+                <ImageView
+                    android:id="@+id/icRepeat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    app:setImageRepeat ="@{event.repeat}"
+                    app:layout_constraintBottom_toBottomOf="@+id/icNotification"
+                    app:layout_constraintStart_toEndOf="@+id/icNotification"
+                    app:layout_constraintTop_toTopOf="@+id/icNotification"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/icSubtask"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_sub_task"
+                    app:layout_constraintBottom_toBottomOf="@+id/icRepeat"
+                    app:layout_constraintStart_toEndOf="@+id/icRepeat"
+                    app:layout_constraintTop_toTopOf="@+id/icRepeat"
+                    app:setImageState="@{event.hasSubTask}"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/icNote"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_note"
+                    app:layout_constraintBottom_toBottomOf="@+id/icSubtask"
+                    app:layout_constraintStart_toEndOf="@+id/icSubtask"
+                    app:layout_constraintTop_toTopOf="@+id/icSubtask"
+                    app:setImageState="@{event.isNote}"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/icFile"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_attach_file"
+                    app:layout_constraintBottom_toBottomOf="@+id/icSubtask"
+                    app:layout_constraintStart_toEndOf="@+id/icNote"
+                    app:layout_constraintTop_toTopOf="@+id/icSubtask"
+                    app:setImageState="@{event.hasFile}"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/flags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/fab_margin"
+                    app:layout_constraintBottom_toBottomOf="@+id/cbTask"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cbTask"
+                    app:setImageFlag="@{event.flagType}"
+                    tools:ignore="ContentDescription" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.padi.todo_list.ui.task.lib.SwipeRevealLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

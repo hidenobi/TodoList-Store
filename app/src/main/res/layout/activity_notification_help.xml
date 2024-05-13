@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="notifyEnable"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="floatingEnable"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="batteryEnable"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="myInterface"
+            type="com.padi.todo_list.ui.notification_help.NotificationAndHelpInterface" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:background="@color/main_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.notification_help.NotificationHelpActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <com.padi.todo_list.common.base.BaseCustomToolbar
+            android:id="@+id/tbNotifyHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textTitle="@string/notification_help" />
+
+        <TextView
+            android:id="@+id/tvNotifyInfo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text="@string/notification_cannot_pop_up"
+            android:textColor="@color/black_1"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbNotifyHelp" />
+
+        <TextView
+            android:id="@+id/tvNotifyInfo2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:maxLines="3"
+            android:text="@string/notification_cannot_pop_up_info"
+            android:textColor="@color/grey_1"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNotifyInfo1" />
+
+        <TextView
+            android:id="@+id/tvAllowNotify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="21dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text="@string/allow_notify"
+            android:textColor="@color/black_1"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNotifyInfo2" />
+
+        <TextView
+            android:id="@+id/tvSetNowNotify"
+            android:onClick="@{() -> myInterface.launchNotifySetting()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:visibility="@{notifyEnable?View.GONE:View.VISIBLE}"
+            android:background="?android:selectableItemBackground"
+            android:fontFamily="@font/sf_pro_text_heavy"
+            android:text="@string/set_now"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAllowNotify"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAllowNotify" />
+
+        <ImageView
+            android:onClick="@{() -> myInterface.launchNotifySetting()}"
+            android:id="@+id/imgEnableNotify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/checked"
+            android:visibility="@{notifyEnable?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAllowNotify"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAllowNotify" />
+
+        <TextView
+            android:id="@+id/tvIgnoreBattery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:maxLines="2"
+            android:text="@string/ignore_battery"
+            android:textColor="@color/black_1"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/rightGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAllowNotify" />
+
+        <TextView
+            android:id="@+id/tvSetNowBattery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="?android:selectableItemBackground"
+            android:fontFamily="@font/sf_pro_text_heavy"
+            android:text="@string/set_now"
+            android:onClick="@{() -> myInterface.launchIgnoreBatterySetting()}"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul"
+            app:layout_constraintBottom_toBottomOf="@+id/tvIgnoreBattery"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="@{batteryEnable?View.GONE:View.VISIBLE}"
+            app:layout_constraintTop_toTopOf="@+id/tvIgnoreBattery" />
+
+        <ImageView
+            android:id="@+id/imgEnableBattery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/checked"
+            android:visibility="@{batteryEnable?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvIgnoreBattery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvIgnoreBattery" />
+
+        <TextView
+            android:id="@+id/tvFloatWindow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text="@string/float_window"
+            android:textColor="@color/black_1"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvIgnoreBattery" />
+
+        <TextView
+            android:id="@+id/tvSetNowFloatWindow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> myInterface.launchFloatingWindowSetting() }"
+            android:layout_marginEnd="16dp"
+            android:background="?android:selectableItemBackground"
+            android:fontFamily="@font/sf_pro_text_heavy"
+            android:text="@string/set_now"
+            android:visibility="@{floatingEnable?View.GONE:View.VISIBLE}"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFloatWindow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvFloatWindow" />
+
+        <ImageView
+            android:id="@+id/imgEnableFloatWindow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{ () -> myInterface.launchFloatingWindowSetting()}"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/checked"
+            android:visibility="@{floatingEnable?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFloatWindow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvFloatWindow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

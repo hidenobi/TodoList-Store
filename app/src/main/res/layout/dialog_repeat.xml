@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_date_time">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:maxLines="1"
+            android:text="@string/set_as_repeat_task"
+            android:textColor="@color/black_1"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/swRepeat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swRepeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="6dp"
+            android:thumb="@drawable/custom_thumb_repeat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:switchMinWidth="40dp"
+            app:track="@drawable/custom_track_repeat"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/swRepeat"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/swRepeat" />
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:padding="@dimen/_10dp"
+            android:text="@string/cancel"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul_50"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDone"
+            app:layout_constraintEnd_toStartOf="@+id/btnDone"
+            app:layout_constraintTop_toTopOf="@+id/btnDone" />
+
+        <TextView
+            android:id="@+id/btnDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="14dp"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:padding="@dimen/_10dp"
+            android:text="@string/done"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvRepeat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

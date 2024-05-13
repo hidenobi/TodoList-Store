@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isRemind"
+            type="java.lang.Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_date_time">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/centerGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:maxLines="1"
+            android:text="@string/reminder_is_on"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/swReminder"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swReminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:checked="@{isRemind}"
+            android:thumb="@drawable/custom_thumb_repeat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:switchMinWidth="40dp"
+            app:track="@drawable/custom_track_repeat"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            android:id="@+id/tvRemindAt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:maxLines="1"
+            android:text="@string/reminder_time"
+            android:textColor="@{isRemind==true?@color/grey_1:@color/grey}"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@id/centerGuideline"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <LinearLayout
+            android:id="@+id/lnRemind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:layout_marginStart="5dp"
+            android:clickable="@{isRemind}"
+            android:gravity="center_vertical|end"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRemindAt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/centerGuideline"
+            app:layout_constraintTop_toTopOf="@+id/tvRemindAt">
+
+            <TextView
+                android:id="@+id/tvRemindValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:maxWidth="140dp"
+                android:maxLines="1"
+                android:paddingVertical="8dp"
+                android:textColor="@{isRemind==true?@color/grey_1:@color/grey}"
+                app:layout_constraintBottom_toBottomOf="@+id/tvRemindAt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvRemindAt"
+                tools:ignore="UseCompatTextViewDrawableXml"
+                tools:text="5 minutes before" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_down"
+            app:layout_constraintBottom_toBottomOf="@id/lnRemind"
+            app:layout_constraintEnd_toEndOf="@id/lnRemind"
+            app:layout_constraintTop_toTopOf="@id/lnRemind" />
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:padding="@dimen/_10dp"
+            android:text="@string/cancel"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul_50"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDone"
+            app:layout_constraintEnd_toStartOf="@+id/btnDone"
+            app:layout_constraintTop_toTopOf="@+id/btnDone" />
+
+        <TextView
+            android:id="@+id/btnDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="14dp"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:padding="@dimen/_10dp"
+            android:text="@string/done"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lnRemind" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

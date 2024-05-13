@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="num"
+            type="java.lang.Integer" />
+
+        <variable
+            name="unit"
+            type="com.padi.todo_list.ui.task.enum_class.RemindUnitEnum" />
+
+        <variable
+            name="clock"
+            type="com.padi.todo_list.ui.task.model.ClockModel" />
+
+        <variable
+            name="offsetTimeUIModel"
+            type="com.padi.todo_list.ui.task.model.OffsetTimeUI" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_date_time">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:text="@string/reminders_time_custom"
+            android:textColor="@color/black_1"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:layout_marginEnd="40dp"
+            android:textSize="20sp"
+            android:id="@+id/numPicker"
+            android:layout_width="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/unitPicker"
+            app:np_dividerColor="@android:color/transparent"
+            android:layout_height="wrap_content"
+            app:np_selectedTextColor="@color/black_1"
+            app:np_selectedTextSize="20sp"
+            app:np_textSize="17sp"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:np_dividerColor="@android:color/transparent"
+            app:np_selectedTextColor="@color/black_1"
+            android:id="@+id/unitPicker"
+            app:np_selectedTextSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/numPicker"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:np_textSize="17sp"
+            app:layout_constraintTop_toTopOf="@id/numPicker" />
+
+        <TextView
+            android:id="@+id/tvPrev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text="@string/before"
+            android:layout_marginStart="40dp"
+            android:textColor="@color/black_1"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/unitPicker"
+            app:layout_constraintStart_toEndOf="@id/unitPicker"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintTop_toTopOf="@+id/unitPicker" />
+
+        <TextView
+            android:id="@+id/tvInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="42dp"
+            android:background="@drawable/round_grey_info_remind"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:textColor="@color/black_1"
+            android:textSize="13sp"
+            app:infoRemindText="@{offsetTimeUIModel}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unitPicker"
+            tools:text="Hom nay 17:00" />
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:text="@string/reminder_overdue"
+            android:textColor="#E92C1E"
+            android:textSize="13sp"
+            app:clockModel="@{clock}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvInfo"
+            app:numberPicker="@{num}"
+            app:unitPicker="@{unit}" />
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:padding="@dimen/_10dp"
+            android:text="@string/cancel"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul_50"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSave"
+            app:layout_constraintEnd_toStartOf="@+id/btnSave"
+            app:layout_constraintTop_toTopOf="@+id/btnSave" />
+
+        <TextView
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="14dp"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:padding="@dimen/_10dp"
+            android:text="@string/done"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvError" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="subtask"
+            type="com.padi.todo_list.ui.task.model.SubTaskUI" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginBottom="4dp"
+        android:padding="4dp">
+
+        <ImageView
+            android:id="@+id/imgTickSubtask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:imageSubTask="@{subtask.isDone}"
+            android:alpha="@{(subtask.isEventComplete)?(0.35f):(1f)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/unchecked" />
+
+        <EditText
+            android:id="@+id/edtSubTask"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:alpha="@{(subtask.isEventComplete)?(0.35f):(1f)}"
+            android:layout_marginStart="16dp"
+            android:background="@null"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:hint="@string/input_the_sub_task"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            app:contentSubTask="@{subtask.isDone}"
+            android:maxLines="1"
+            android:text="@{subtask.content}"
+            android:focusable="@{!subtask.isEventComplete}"
+            android:focusableInTouchMode="@{!subtask.isEventComplete}"
+            android:textColor="@color/grey_1"
+            android:textSize="@dimen/size_text_small"
+            app:layout_constraintBottom_toBottomOf="@+id/imgTickSubtask"
+            app:layout_constraintEnd_toStartOf="@+id/imgDeleteSubtask"
+            app:layout_constraintStart_toEndOf="@+id/imgTickSubtask"
+            app:layout_constraintTop_toTopOf="@+id/imgTickSubtask"
+            tools:text="Hello world" />
+
+        <ImageView
+            android:id="@+id/imgDeleteSubtask"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            app:subtaskMode="@{subtask.focused}"
+            android:alpha="@{(subtask.isEventComplete)?(0.35f):(1f)}"
+            tools:src="@drawable/ic_menu_grey"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@id/imgTickSubtask"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imgTickSubtask" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

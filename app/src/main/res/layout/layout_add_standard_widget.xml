@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple_layout_add_widget">
+
+    <TextView
+        android:id="@+id/tvStandard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="32dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:maxWidth="90dp"
+        android:maxLines="2"
+        android:text="@string/standard"
+        android:textColor="@color/black_1"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/centerGuidLine"
+        app:layout_constraintTop_toTopOf="@+id/imgPrev" />
+
+    <TextView
+        android:id="@+id/tvSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:maxWidth="90dp"
+        android:maxLines="2"
+        android:text="@string/size4x4"
+        android:textColor="@color/grey_1"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvStandard"
+        app:layout_constraintTop_toBottomOf="@id/tvStandard" />
+
+    <TextView
+        android:id="@+id/tvAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/round_btn_add_widget"
+        android:ellipsize="end"
+        android:fontFamily="@font/sf_pro_text_medium"
+        android:maxWidth="90dp"
+        android:maxLines="1"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="4dp"
+        android:text="@string/add"
+        android:textAllCaps="true"
+        android:textColor="@color/primary_purpul"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@id/tvStandard"
+        app:layout_constraintTop_toBottomOf="@id/tvSize" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/centerGuidLine"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="206dp" />
+
+    <ImageView
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        android:background="@drawable/round_shadow_5dp"
+        app:layout_constraintBottom_toBottomOf="@id/imgPrev"
+        app:layout_constraintEnd_toEndOf="@id/imgPrev"
+        app:layout_constraintStart_toStartOf="@id/imgPrev"
+        app:layout_constraintTop_toTopOf="@id/imgPrev" />
+
+    <ImageView
+        android:id="@+id/imgPrev"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_standard_widget_prev"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/centerGuidLine"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="event"
+            type="com.padi.todo_list.data.local.model.EventTaskEntity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivTask"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_task_next_week"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvTaskName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:maxLines="1"
+                android:textColor="@color/black_1"
+                android:text="@{event.name}"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivTask"
+                app:layout_constraintEnd_toStartOf="@+id/tvDateTask"
+                app:layout_constraintStart_toEndOf="@id/ivTask"
+                app:layout_constraintTop_toTopOf="@id/ivTask"
+                tools:text="Play" />
+
+            <TextView
+                android:id="@+id/tvDateTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:maxLines="1"
+                android:textColor="@color/grey_1"
+                app:convertLongToDateStr="@{event.dueDate}"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivTask"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvTaskName"
+                app:layout_constraintTop_toTopOf="@id/ivTask"
+                tools:text="03/07 09:00" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

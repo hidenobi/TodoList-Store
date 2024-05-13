@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="event"
+            type="com.padi.todo_list.ui.task.model.NoteUI" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_screen"
+        tools:context=".ui.detail_task.NoteActivity">
+
+        <com.padi.todo_list.common.base.BaseCustomToolbar
+            android:id="@+id/tbNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textTitle="" />
+        <EditText
+            android:id="@+id/titleNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/main_screen"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:paddingStart="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text="@{event.titLe.toString()}"
+            android:textColor="@color/black_1"
+            android:textSize="18sp"
+            android:hint="@string/note_title_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbNote"/>
+
+        <EditText
+            android:id="@+id/content_note"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/titleNote"
+            app:layout_constraintStart_toStartOf="@+id/titleNote"
+            app:layout_constraintEnd_toEndOf="@+id/titleNote"
+            android:background="@color/main_screen"
+            android:textColorHint="@color/grey_2"
+            android:paddingBottom="@dimen/_5sdp"
+            android:textSize="15sp"
+            android:text="@{event.content.toString()}"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:hint="@string/add_note"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

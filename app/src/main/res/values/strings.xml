@@ -1,0 +1,247 @@
+<resources>
+    <string translatable="false" name="explanation_for_special_use" >
+        Uses a foreground service to display the app\'s notification content when given SYSTEM_ALERT_WINDOW permission by the user
+    </string>
+    <string name="app_name">Activity Management</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="nav_title_task">Task</string>
+    <string name="nav_title_calendar">Calendar</string>
+    <string name="nav_title_my">Mine</string>
+    <string name="content_task">Enter new task here</string>
+    <string name="no_category">No Category</string>
+    <string name="all">All</string>
+    <string name="toast_star">Task starred</string>
+    <string name="toast_unstarred">Task unstarred</string>
+    <string name="cong_viec">Work</string>
+    <string name="ca_nhan">Personalized</string>
+    <string name="ds_yeu_thich">Favorites list</string>
+    <string name="ngay_sinh_nhat">Birthday</string>
+    <string name="search">Search</string>
+    <string name="edt_search">Search...</string>
+    <string name="edit">EDIT</string>
+    <string name="edit_category">Edit</string>
+    <string name="arrage_task">Sort by</string>
+    <string name="mark_with_symbol">Marked with symbols</string>
+    <string name="clear">Clean</string>
+    <string name="flag">Flag</string>
+    <string name="number">Number</string>
+    <string name="progress">Progress</string>
+    <string name="mood">Mood</string>
+    <string name="previous">Previous</string>
+    <string name="today">Today</string>
+    <string name="future">Future</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="no_date">No date</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="_3_days_later">3 days later</string>
+    <string name="this_sunday">This Sunday</string>
+    <string name="time">Time</string>
+    <string name="no">No</string>
+    <string name="no_time">No time</string>
+    <string name="_07_00" translatable="false">07:00</string>
+    <string name="_09_00" translatable="false">09:00</string>
+    <string name="_10_00" translatable="false">10:00</string>
+    <string name="_12_00" translatable="false">12:00</string>
+    <string name="_14_00" translatable="false">14:00</string>
+    <string name="_16_00" translatable="false">16:00</string>
+    <string name="_18_00" translatable="false">18:00</string>
+    <string name="_07_am" translatable="false">07:00 AM</string>
+    <string name="_09_am" translatable="false">09:00 AM</string>
+    <string name="_10_am" translatable="false">10:00 AM</string>
+    <string name="_12_pm" translatable="false">12:00 PM</string>
+    <string name="_02_pm" translatable="false">02:00 PM</string>
+    <string name="_04_pm" translatable="false">04:00 PM</string>
+    <string name="_06_pm" translatable="false">06:00 PM</string>
+    <string name="delete">Delete</string>
+    <string name="delete_job">Delete work?</string>
+    <string name="manage_categories">Manage Categories</string>
+    <string name="categories_display">Categories display on the home page</string>
+    <string name="create_new">Create New</string>
+    <string name="long_press">Long press and drag to reorder</string>
+    <string name="star">Star</string>
+    <string name="star_task">Star tasks</string>
+    <string name="star_task_title">Star Tasks</string>
+    <string name="text_empty_star">There are no star tasks.\nPlease swipe the tasks on the home page to the left to mark the star!</string>
+    <string name="day">Day</string>
+    <string name="title_arrange">The tasks are sorted by</string>
+    <string name="date_format">Date format</string>
+    <string name="task_complete">Task Completion Tone</string>
+    <string name="text_empty">Click here to create your first \ntask.</string>
+    <string name="date_and_time">Date &amp; Time</string>
+    <string name="text_ymd">%s (Year/month/day)</string>
+    <string name="text_dmy">%s (Day/month/year)</string>
+    <string name="text_mdy">%s (Month/day/year)</string>
+    <string name="time_format">Time format</string>
+    <string name="system_default">System default</string>
+    <string name="time_24h">24h hours</string>
+    <string name="time_12h">12h hours</string>
+    <string name="due_date">Due date and time</string>
+    <string name="due_date_detail">Due date</string>
+    <string name="alpha_bet_AZ">Alphabet A-Z</string>
+    <string name="alpha_bet_ZA">Alphabet Z-A</string>
+    <string name="complete_today">Completed Today</string>
+    <string name="save">Save</string>
+
+    <string name="minute">Minute</string>
+    <string name="hour">Hour</string>
+    <string name="week">Week</string>
+    <string name="remind">Remind</string>
+    <string name="repeat_task">Repeat the task</string>
+    <string name="repeat">Repeat</string>
+    <string name="same_with_due_date">Same with due date</string>
+    <string name="five_minnutes_before">5 minutes before</string>
+    <string name="ten_minnutes_before">10 minutes before</string>
+    <string name="fifteen_minnutes_before">15 minutes before</string>
+    <string name="thirty_minnutes_before">30 minutes before</string>
+    <string name="one_day_before">1 day before</string>
+    <string name="set_reminder_time">Set reminder time</string>
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
+
+    <string name="title_create_category">Create new category</string>
+    <string name="input_here">Input here.</string>
+    <string name="not_available">Not available</string>
+    <string name="note">Note</string>
+    <string name="attach_file">Attachments</string>
+    <string name="set_time">Set time</string>
+    <string name="reminder_is_on">Reminder is on</string>
+    <string name="set_as_repeat_task">Set as Repeat Task</string>
+    <string name="reminder_overdue">The reminder is overdue</string>
+    <string name="before">Before</string>
+    <string name="reminders_time_custom">Reminder Time Custom</string>
+    <string name="reminder_time">Reminder time</string>
+    <string name="add_note">Add notes</string>
+
+    <string name="minutes">Minutes</string>
+    <string name="hours">Hours</string>
+    <string name="days">Days</string>
+    <string name="weeks">Weeks</string>
+    <string name="input_the_sub_task">Input the sub-task</string>
+    <string name="app_name_header">Activity \nManagement</string>
+    <string name="widget">Widget</string>
+    <string name="category">Category</string>
+    <string name="language">Language</string>
+    <string name="permission">Permission</string>
+    <string name="rate_us">Rate us</string>
+    <string name="rate">Rate</string>
+    <string name="share_app">Share app</string>
+    <string name="feedback">Feedback</string>
+    <string name="setting">Setting</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="version">Version 1.0</string>
+    <string name="customize">Customize</string>
+    <string name="notification_and_reminder"><![CDATA[Notification \&\ Reminder]]></string>
+    <string name="task_reminder_not_work">Task Reminder Does not Work</string>
+    <string name="tab_find_solutions">Tab to find solutions.</string>
+    <string name="create_task_info">Create tasks directly by swiping down the notification bar. Easier and faster.</string>
+    <string name="add_task_from_notify">Add Tasks from Notification Bar</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="todo_reminder">Todo Reminder</string>
+    <string name="todo_reminder_info">Turn on reminders to avoid missing task</string>
+    <string name="notification_help">Notification Help</string>
+    <string name="notification_cannot_pop_up">Notification cannot pop-up</string>
+    <string name="notification_cannot_pop_up_info">To Do may be cleared from the background by the system. In order to notify you on time, please enable the Ignore battery saving mode.</string>
+    <string name="allow_notify">Allow Notification</string>
+    <string name="ignore_battery">Ignore battery saving mode</string>
+    <string name="float_window">Floating window</string>
+    <string name="set_now">set now</string>
+    <string name="activity_management">Activity Management</string>
+    <string name="add_tasks">Add tasks</string>
+    <string name="add">ADD</string>
+    <string name="enjoy_your_day">Enjoy your day</string>
+    <string name="add_side_quests">Add sub-task</string>
+    <string name="time_reminder">Time &amp; Reminder</string>
+    <string name="reminder">Reminder</string>
+    <string name="enjoy_your_day_make_plan">Enjoy your day &#x2764; <font color="#FF0000" />. Making plans now?</string>
+    <string name="click_create_job">Click to create job</string>
+    <string name="cannot_be_empty">Cannot be empty</string>
+    <string name="please_select_a_date">Please select a date</string>
+    <string name="please_select_time">Please select time</string>
+    <string name="task_reminders">Task Reminders</string>
+    <string name="check">check</string>
+    <string name="got_it">got it</string>
+    <string name="txt_check_task"><u>Check all completed tasks</u></string>
+    <string name="txt_complete_time">Completed Time</string>
+    <string name="txt_delete_all_task">Delete all completed tasks?</string>
+    <string name="txt_delete_category">Delete the category?</string>
+    <string name="request_permission_storage">Request permission storage</string>
+    <string name="add_widget_info">Click ADD button to add widgett to your Home Screen. Widget is a quick and easy way to check and create your tasks</string>
+    <string name="standard">Standard</string>
+    <string name="size4x4">Size: 4*4</string>
+    <string name="widget_setting">Widget Setting</string>
+    <string name="info_widget_guide">If you can not find the created widget. Please try the following way to add a widget.</string>
+    <string name="step_one_widget_guide">1. On a Home Screen, touch and hold an empty space</string>
+    <string name="step_two_widget_guide">2. Tap Widgets.</string>
+    <string name="step_three_widget_guide">3. Touch and hold a widget. Slide the widget to where you want it.</string>
+    <string name="txt_4x4">4*4</string>
+    <string name="normal">Normal</string>
+    <string name="txt_tab_and_hold_widget">Tap and hold the widget or tap Add to add it to the Home screen</string>
+    <string name="add_to_home_screen">Add to home screen</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="not_support">not support</string>
+    <string name="all_tasks">All Tasks</string>
+    <string name="txt_task_overview">Task overview</string>
+    <string name="txt_completed_tasks">Completed Tasks</string>
+    <string name="txt_pending_task">Pending Tasks</string>
+    <string name="txt_all_task_done">All tasks undone to be processed.</string>
+    <string name="txt_do_u_quit">Do you want to quit?</string>
+    <string name="txt_tap_again">Tap again to quit the app. See you next time.</string>
+    <string name="txt_quit">quit</string>
+    <string name="completion_of_daily_tasks">Completion of Daily Tasks</string>
+    <string name="tasks_in_next_7_days">Tasks in Next 7 Days</string>
+    <string name="in_7_days">In 7 days</string>
+    <string name="in_30_days">In 30 days</string>
+    <string name="pending_tasks_in_categories">Pending Tasks in Categories</string>
+    <string name="start">Start</string>
+    <string name="next">Next</string>
+    <string name="title_intro_1">Create tasks quickly and easily</string>
+    <string name="content_intro_1">Input tasks, subtasks, and recurring tasks into our dynamic system</string>
+    <string name="title_intro_2">Take reminders</string>
+    <string name="content_intro_2">Set reminders and never miss important things with advanced notification system</string>
+    <string name="title_intro_3">Personalized amenities</string>
+    <string name="content_intro_3">Create widgets and view your tasks more easily, designed to streamline your workflow</string>
+    <string name="time_scope">Time Scope</string>
+    <string name="category_filter">Category Filter</string>
+    <string name="show_completed_task">Show Completed Task</string>
+    <string name="completed">Completed</string>
+    <string name="title_rate_app">Please rate us 5 Stars if you \nenjoy our app</string>
+    <string name="star_color">5 Stars</string>
+    <string name="content_rate_app">We are working hard to provide a better \nuser experience.</string>
+    <string name="txt_please_feedback">Please feedback</string>
+    <string name="text_delete">All tasks in this category will be deleted.</string>
+    <string name="mark_it_done">Mark it done</string>
+    <string name="mark_it_undone">Mark it Undone</string>
+    <string name="duplicate_tasks">Duplicate tasks</string>
+    <string name="share">Share</string>
+    <string name="task_marked_as_completed">This task has been marked as completed</string>
+    <string name="undone_successfully">Undone Successfully</string>
+    <string name="txt_tutorial_1">Drag left for more options.</string>
+    <string name="copy">" (Copy)"</string>
+    <string name="ok">OK</string>
+    <string name="go">Go</string>
+    <string name="content_permission">\"Activity Management\" requires \npermission to use</string>
+    <string name="floating_window">Floating window</string>
+    <string name="notifi">Notification</string>
+    <string name="note_title_hint">Title</string>
+    <string name="txt_dialog_noti_content">You have not turned on notification premissions. Task reminder will not work.</string>
+    <string name="please_allow_notification">Please Allow Notification</string>
+    <string name="txt_content_battery_dialog">To remind you on time, please turn on battery - saving Mood Ignore mode</string>
+    <string name="txt_establish">establish</string>
+    <string name="txt_later">Later</string>
+    <string name="allow_appear_on_top_permission">Allow Appear on top permission.</string>
+    <string name="txt_window_per_content_dialog">We need this permission to prompt you on the home screen.</string>
+    <string name="txt_tutorial_2">Drag right or click the button to \ncomplete the task.</string>
+    <string name="txt_tutorial_3">Press and hold to organize work.</string>
+
+</resources>

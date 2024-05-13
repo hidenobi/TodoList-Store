@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_default_category">
+        <item>@string/cong_viec</item>
+        <item>@string/ca_nhan</item>
+        <item>@string/ds_yeu_thich</item>
+        <item>@string/ngay_sinh_nhat</item>
+    </string-array>
+    <string-array name="array_flag_language">
+        <item>@drawable/img_flag_eng</item>
+        <item>@drawable/img_flag_spanish</item>
+        <item>@drawable/img_flag_french</item>
+        <item>@drawable/img_flag_indo</item>
+        <item>@drawable/img_flag_hindi</item>
+        <item>@drawable/img_flag_portugeese</item>
+    </string-array>
+    <string-array name="array_language_code">
+        <item>en</item>
+        <item>es</item>
+        <item>fr</item>
+        <item>in</item>
+        <item>hi</item>
+        <item>pt</item>
+    </string-array>
+    <string-array name="array_country">
+        <item>@string/english</item>
+        <item>@string/spanish</item>
+        <item>@string/french</item>
+        <item>@string/indo</item>
+        <item>@string/hindi</item>
+        <item>@string/portuguese</item>
+    </string-array>
+    <string-array name="array_flag">
+        <item>@drawable/ic_flag_select_1</item>
+        <item>@drawable/ic_flag_select_2</item>
+        <item>@drawable/ic_flag_select_3</item>
+        <item>@drawable/ic_flag_select_4</item>
+        <item>@drawable/ic_flag_select_5</item>
+        <item>@drawable/ic_flag_select_6</item>
+        <item>@drawable/ic_flag_select_7</item>
+        <item>@drawable/ic_flag_select_8</item>
+        <item>@drawable/ic_flag_select_9</item>
+        <item>@drawable/ic_flag_select_10</item>
+        <item>@drawable/ic_flag_select_11</item>
+        <item>@drawable/ic_flag_select_12</item>
+        <item>@drawable/ic_flag_select_13</item>
+        <item>@drawable/ic_flag_select_14</item>
+        <item>@drawable/ic_flag_select_15</item>
+        <item>@drawable/ic_flag_select_16</item>
+        <item>@drawable/ic_flag_select_17</item>
+        <item>@drawable/ic_flag_select_18</item>
+        <item>@drawable/ic_flag_select_19</item>
+        <item>@drawable/ic_flag_select_20</item>
+    </string-array>
+
+
+    <string-array name="remind_unit_picker">
+        <item>@string/minutes</item>
+        <item>@string/hours</item>
+        <item>@string/days</item>
+        <item>@string/weeks</item>
+    </string-array>
+
+    <string name="english">English</string>
+    <string name="spanish">Spanish</string>
+    <string name="french">French</string>
+    <string name="indo">Indonesian</string>
+    <string name="hindi">Hindi</string>
+    <string name="portuguese">Portuguese</string>
+
+    <string-array name="time_scope_name">
+        <item>@string/all_tasks</item>
+        <item>@string/today</item>
+    </string-array>
+
+    <string-array name="left_menu">
+        <item>@string/star_task</item>
+        <item>@string/category</item>
+        <item>@string/widget</item>
+        <item>@string/language</item>
+        <item>@string/rate_us</item>
+        <item>@string/share_app</item>
+        <item>@string/feedback</item>
+        <item>@string/setting</item>
+        <item>@string/privacy_policy</item>
+        <item>@string/version</item>
+    </string-array>
+
+    <integer-array name="menu_icon">
+        <item>@drawable/ic_star_tasks</item>
+        <item>@drawable/ic_category</item>
+        <item>@drawable/ic_widget</item>
+        <item>@drawable/ic_language</item>
+        <item>@drawable/ic_rate_us</item>
+        <item>@drawable/ic_share_app</item>
+        <item>@drawable/ic_feedback</item>
+        <item>@drawable/ic_setting</item>
+        <item>@drawable/ic_policy</item>
+        <item>@drawable/ic_version</item>
+    </integer-array>
+
+</resources>

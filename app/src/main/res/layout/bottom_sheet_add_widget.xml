@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:paddingTop="24dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/centerGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text="@string/add_to_home_screen"
+            android:textColor="@color/black_1"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@id/tvInfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:gravity="center_horizontal"
+            android:lines="2"
+            android:maxLines="2"
+            android:text="@string/txt_tab_and_hold_widget"
+            android:textColor="@color/grey_1"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@id/imgWidgetPrev"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/round_shadow_5dp"
+            app:layout_constraintBottom_toBottomOf="@id/imgWidgetPrev"
+            app:layout_constraintEnd_toEndOf="@id/imgWidgetPrev"
+            app:layout_constraintStart_toStartOf="@id/imgWidgetPrev"
+            app:layout_constraintTop_toTopOf="@id/imgWidgetPrev" />
+
+        <ImageView
+            android:id="@+id/imgWidgetPrev"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/ic_standard_widget_prev"
+            app:layout_constraintBottom_toTopOf="@id/tvNameSize"
+            app:layout_constraintEnd_toEndOf="@id/centerGuideline"
+            app:layout_constraintStart_toStartOf="@id/centerGuideline" />
+
+        <TextView
+            android:id="@+id/tvNameSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/normal"
+            android:textColor="@color/grey_1"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/tvNumberSize"
+            app:layout_constraintEnd_toEndOf="@id/centerGuideline"
+            app:layout_constraintStart_toStartOf="@id/centerGuideline" />
+
+        <TextView
+            android:id="@+id/tvNumberSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_4x4"
+            android:textColor="@color/grey_2"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@id/tvCancel"
+            app:layout_constraintEnd_toEndOf="@id/centerGuideline"
+            app:layout_constraintStart_toStartOf="@id/centerGuideline" />
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="30dp"
+            android:background="?selectableItemBackground"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:padding="10dp"
+            android:text="@string/cancel"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul_50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/centerGuideline" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            android:background="#1A2C2C2C"
+            app:layout_constraintBottom_toBottomOf="@id/tvCancel"
+            app:layout_constraintEnd_toEndOf="@id/centerGuideline"
+            app:layout_constraintStart_toStartOf="@id/centerGuideline"
+            app:layout_constraintTop_toTopOf="@id/tvCancel" />
+
+        <TextView
+            android:id="@+id/tvAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="30dp"
+            android:background="?selectableItemBackground"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:padding="10dp"
+            android:text="@string/add"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/centerGuideline" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

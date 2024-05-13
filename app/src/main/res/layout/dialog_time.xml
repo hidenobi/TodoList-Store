@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="timeSelection"
+            type="com.padi.todo_list.ui.task.enum_class.TimeSelectionEnum" />
+        <variable
+            name="is24HourView"
+            type="java.lang.Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_date_time">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:text="@string/set_time"
+            android:textColor="@color/black_1"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:headerBackground="@color/primary_purpul"
+            android:numbersBackgroundColor="#F3FCFF"
+            android:numbersInnerTextColor="@color/black"
+            android:numbersSelectorColor="@color/primary_purpul"
+            android:numbersTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/timePicker"
+            app:singleSelection="true">
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipNoTime"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{timeSelection==timeSelection.NO_TIME?true:false}"
+                android:text="@string/no_time"
+                app:checkedIconVisible="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip7Hour"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{timeSelection==timeSelection._7_HOUR?true:false}"
+                android:text="@{is24HourView?@string/_07_00:@string/_07_am}"
+                tools:text="@string/_07_00"
+                app:checkedIconVisible="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip9Hour"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{timeSelection==timeSelection._9_HOUR?true:false}"
+                android:text="@{is24HourView?@string/_09_00:@string/_09_am}"
+                tools:text="@string/_09_00"
+                app:checkedIconVisible="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip10Hour"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{timeSelection==timeSelection._10_HOUR?true:false}"
+                android:text="@{is24HourView?@string/_10_00:@string/_10_am}"
+                tools:text="@string/_10_00"
+                app:checkedIconVisible="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip12Hour"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{timeSelection==timeSelection._12_HOUR?true:false}"
+                android:text="@{is24HourView?@string/_12_00:@string/_12_pm}"
+                tools:text="@string/_12_00"
+                app:checkedIconVisible="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip14Hour"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{timeSelection==timeSelection._14_HOUR?true:false}"
+                android:text="@{is24HourView?@string/_14_00:@string/_02_pm}"
+                tools:text="@string/_14_00"
+                app:checkedIconVisible="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip16Hour"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{timeSelection==timeSelection._16_HOUR?true:false}"
+                android:text="@{is24HourView?@string/_16_00:@string/_04_pm}"
+                tools:text="@string/_16_00"
+                app:checkedIconVisible="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip18Hour"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{timeSelection==timeSelection._18_HOUR?true:false}"
+                android:text="@{is24HourView?@string/_18_00:@string/_06_pm}"
+                tools:text="@string/_18_00"
+                app:checkedIconVisible="false" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:padding="@dimen/_10dp"
+            android:text="@string/cancel"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul_50"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDone"
+            app:layout_constraintEnd_toStartOf="@+id/btnDone"
+            app:layout_constraintTop_toTopOf="@+id/btnDone" />
+
+        <TextView
+            android:id="@+id/btnDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:padding="@dimen/_10dp"
+            android:text="@string/done"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_purpul"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chipGroupTime" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

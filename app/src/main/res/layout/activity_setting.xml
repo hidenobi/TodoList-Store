@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_screen"
+        tools:context=".ui.setting.SettingActivity">
+
+        <com.padi.todo_list.common.base.BaseCustomToolbar
+            android:id="@+id/tbSetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textTitle="@string/setting" />
+
+        <TextView
+            android:id="@+id/tvCustomize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:text="@string/customize"
+            android:textColor="@color/grey_1"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbSetting" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llCustomize"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvCustomize"
+            app:layout_constraintTop_toBottomOf="@id/tvCustomize">
+
+            <LinearLayout
+                android:id="@+id/lnNotifyAndRemind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="?android:selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="8dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvNotify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_11sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:text="@string/notification_and_reminder"
+                    android:textColor="@color/black_1"
+                    android:textSize="15sp"
+                    app:drawableStartCompat="@drawable/ic_notify_and_reminder" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llTone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/lnNotifyAndRemind"
+                app:layout_constraintTop_toBottomOf="@+id/lnNotifyAndRemind">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_11sdp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:text="@string/task_complete"
+                    android:textColor="@color/black_1"
+                    android:textSize="15sp"
+                    app:drawableStartCompat="@drawable/ic_complete_tone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/swTone"
+                    app:layout_constraintTop_toTopOf="@+id/swTone" />
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swTone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:checked="true"
+                    android:thumb="@drawable/custom_thumb_repeat"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:switchMinWidth="40dp"
+                    app:track="@drawable/custom_track_repeat"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="0dp"
+            android:layout_height="0.7dp"
+            app:layout_constraintStart_toStartOf="@+id/llCustomize"
+            app:layout_constraintEnd_toEndOf="@id/llCustomize"
+            app:layout_constraintTop_toBottomOf="@id/llCustomize"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/line"/>
+
+
+        <TextView
+            android:id="@+id/dateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:text="@string/date_and_time"
+            android:textColor="@color/grey_1"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llTimeFormat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/dateTime"
+            app:layout_constraintTop_toBottomOf="@+id/dateTime">
+
+
+            <TextView
+                android:id="@+id/title_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:text="@string/time_format"
+                android:textColor="@color/black_1"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/imgTimeFormat"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:text="@string/time_format"
+                android:textColor="@color/grey_1"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/title_time"
+                app:layout_constraintTop_toBottomOf="@+id/title_time" />
+
+            <ImageView
+                android:id="@+id/imgTimeFormat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_date_format"
+                app:layout_constraintBottom_toBottomOf="@+id/txtOption"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/title_time" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llDateFormat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/dateTime"
+            app:layout_constraintTop_toBottomOf="@+id/llTimeFormat">
+
+            <TextView
+                android:id="@+id/title_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:text="@string/date_format"
+                android:textColor="@color/black_1"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/imgDayFormat"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:text="@string/time_format"
+                android:textColor="@color/grey_1"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/title_day"
+                app:layout_constraintTop_toBottomOf="@+id/title_day" />
+
+            <ImageView
+                android:id="@+id/imgDayFormat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_day_formate"
+                app:layout_constraintBottom_toBottomOf="@+id/txtDay"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/title_day" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

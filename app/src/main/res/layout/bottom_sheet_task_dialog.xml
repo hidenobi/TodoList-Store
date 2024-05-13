@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="category"
+            type="com.padi.todo_list.data.local.model.CategoryEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet">
+
+        <EditText
+            android:id="@+id/edtEventName"
+            android:layout_width="0dp"
+            android:layout_height="86dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_edt_new_task"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:hint="@string/content_task"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLength="255"
+            android:maxLines="1"
+            android:paddingHorizontal="16dp"
+            android:textColorHint="@color/black_1"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSubTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtEventName" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@drawable/round_edt_new_task"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:gravity="center"
+            android:maxWidth="110dp"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:text="@{category.name}"
+            android:textColor="@color/grey2"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAdd"
+            app:layout_constraintStart_toStartOf="@id/edtEventName"
+            app:layout_constraintTop_toTopOf="@+id/btnAdd"
+            tools:text="No Category" />
+
+        <ImageView
+            android:id="@+id/ivCalender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/ic_date"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
+            app:layout_constraintStart_toEndOf="@+id/tvCategory"
+            app:layout_constraintTop_toTopOf="@+id/tvCategory" />
+
+        <ImageView
+            android:id="@+id/ivSubTasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_subtask"
+            app:layout_constraintBottom_toBottomOf="@+id/ivCalender"
+            app:layout_constraintStart_toEndOf="@+id/ivCalender"
+            app:layout_constraintTop_toTopOf="@+id/ivCalender" />
+
+        <ImageView
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_button_add_new_task_disable"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rvSubTask"
+            app:layout_constraintTop_toBottomOf="@+id/rvSubTask" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

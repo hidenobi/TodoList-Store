@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/status_bar_height"
+            android:paddingHorizontal="@dimen/_6sdp"
+            tools:context=".ui.my.MyFragment">
+
+            <TextView
+                android:id="@+id/titleScr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:text="@string/txt_task_overview"
+                android:textAlignment="center"
+                android:textColor="@color/black_1"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivBgLeft"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bg_text_detail_task"
+                app:layout_constraintBottom_toTopOf="@+id/bgLineChart"
+                app:layout_constraintDimensionRatio="H,166:112"
+                app:layout_constraintEnd_toStartOf="@+id/ivBgRight"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleScr"
+                app:layout_constraintWidth_percent="0.45"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvCountComplete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:textColor="@color/black_1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tvCompleteTask"
+                app:layout_constraintEnd_toEndOf="@id/ivBgLeft"
+                app:layout_constraintStart_toStartOf="@id/ivBgLeft"
+                app:layout_constraintTop_toTopOf="@id/ivBgLeft"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="-1" />
+
+            <TextView
+                android:id="@+id/tvCompleteTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:text="@string/txt_completed_tasks"
+                android:textColor="@color/grey_1"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivBgLeft"
+                app:layout_constraintEnd_toEndOf="@+id/ivBgLeft"
+                app:layout_constraintStart_toStartOf="@+id/ivBgLeft"
+                app:layout_constraintTop_toBottomOf="@+id/tvCountComplete" />
+
+            <ImageView
+                android:id="@+id/ivBgRight"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bg_text_detail_task"
+                app:layout_constraintBottom_toBottomOf="@id/ivBgLeft"
+                app:layout_constraintDimensionRatio="H,166:112"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivBgLeft"
+                app:layout_constraintTop_toTopOf="@id/ivBgLeft"
+                app:layout_constraintWidth_percent="0.45"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvCountPending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:textColor="@color/black_1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tvPendingTask"
+                app:layout_constraintEnd_toEndOf="@id/ivBgRight"
+                app:layout_constraintStart_toStartOf="@id/ivBgRight"
+                app:layout_constraintTop_toTopOf="@id/ivBgRight"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="-1" />
+
+            <TextView
+                android:id="@+id/tvPendingTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:text="@string/txt_pending_task"
+                android:textColor="@color/grey_1"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivBgRight"
+                app:layout_constraintEnd_toEndOf="@+id/ivBgRight"
+                app:layout_constraintStart_toStartOf="@+id/ivBgRight"
+                app:layout_constraintTop_toBottomOf="@+id/tvCountPending" />
+
+            <ImageView
+                android:id="@+id/ivInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_info"
+                app:layout_constraintEnd_toEndOf="@id/ivBgRight"
+                app:layout_constraintTop_toTopOf="@id/ivBgRight"
+                tools:ignore="ContentDescription" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:layout_constraintDimensionRatio="H,270:46"
+                app:layout_constraintEnd_toEndOf="@id/ivInfo"
+                app:layout_constraintTop_toBottomOf="@id/ivInfo"
+                app:layout_constraintWidth_percent="0.8">
+
+                <TextView
+                    android:id="@+id/textInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="@dimen/_10sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/txt_all_task_done"
+                    android:textColor="@color/black_1"
+                    android:textSize="15sp" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/bgLineChart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bg_text_detail_task"
+                app:layout_constraintDimensionRatio="H,343:235"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivBgLeft"
+                app:layout_constraintWidth_percent="1"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvTitleChart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:text="@string/completion_of_daily_tasks"
+                android:textColor="@color/grey_1"
+                app:layout_constraintEnd_toStartOf="@id/ivArrowLeft"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/bgLineChart"
+                app:layout_constraintTop_toTopOf="@id/bgLineChart" />
+
+            <ImageView
+                android:id="@+id/ivArrowLeft"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:adjustViewBounds="true"
+                android:padding="4dp"
+                android:rotation="90"
+                app:layout_constraintEnd_toStartOf="@id/tvDateChart"
+                app:layout_constraintTop_toTopOf="@id/tvTitleChart"
+                app:layout_constraintStart_toEndOf="@id/tvTitleChart"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_down"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvDateChart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:textColor="@color/grey_1"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@id/ivArrowLeft"
+                app:layout_constraintTop_toTopOf="@id/tvTitleChart"
+                app:layout_constraintEnd_toStartOf="@id/ivArrowRight"
+                tools:text="99/99-99/99" />
+
+            <ImageView
+                android:id="@+id/ivArrowRight"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:adjustViewBounds="true"
+                android:padding="4dp"
+                android:visibility="invisible"
+                android:layout_marginEnd="10dp"
+                android:rotation="270"
+                app:layout_constraintStart_toEndOf="@id/tvDateChart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvTitleChart"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_down"
+                tools:ignore="ContentDescription" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="4dp"
+                android:background="@color/transparent"
+                app:layout_constraintBottom_toBottomOf="@id/bgLineChart"
+                app:layout_constraintEnd_toEndOf="@id/bgLineChart"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/bgLineChart"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleChart"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/csTaskNextDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bgLineChart"
+                app:layout_constraintWidth_percent="1">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bg_text_detail_task"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/bgRecycle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:text="@string/tasks_in_next_7_days"
+                    android:textColor="@color/grey_1"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toTopOf="@id/rcvTaskNext"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvTaskNext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bgRecycle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/bgPieChart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bg_text_detail_task"
+                app:layout_constraintDimensionRatio="H,343:194"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintTop_toBottomOf="@id/csTaskNextDay"
+                app:layout_constraintWidth_percent="1"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvTitlePieChart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:text="@string/pending_tasks_in_categories"
+                android:textColor="@color/grey_1"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/ivArrowDown"
+                app:layout_constraintStart_toStartOf="@+id/bgPieChart"
+                app:layout_constraintTop_toTopOf="@id/bgPieChart" />
+
+            <ImageView
+                android:id="@+id/ivArrowDown"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:adjustViewBounds="true"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_down"
+                app:layout_constraintBottom_toBottomOf="@id/tvTitlePieChart"
+                app:layout_constraintEnd_toStartOf="@+id/tvPeriod"
+                app:layout_constraintStart_toEndOf="@id/tvTitlePieChart"
+                app:layout_constraintTop_toTopOf="@id/tvTitlePieChart"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvPeriod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:text="@string/in_7_days"
+                android:textColor="@color/grey_1"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvTitlePieChart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivArrowDown"
+                app:layout_constraintTop_toTopOf="@id/tvTitlePieChart"
+                tools:text="In -999 days" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/bgPieChart"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="@id/bgPieChart"
+                app:layout_constraintTop_toBottomOf="@id/tvTitlePieChart"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvPieLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/pieChart"
+                app:layout_constraintStart_toEndOf="@id/pieChart"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toTopOf="@id/pieChart"
+                app:layout_constraintWidth_percent="0.45" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
